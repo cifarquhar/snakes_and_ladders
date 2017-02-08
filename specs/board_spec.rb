@@ -23,7 +23,7 @@ class TestBoard < MiniTest::Test
   # end
 
   def test_has_snakes
-    assert_equal(false,@board.snakes.empty?)
+    assert_equal(false,@board.snakes_and_ladders.empty?)
   end
 
   def test_find_player_position
@@ -45,5 +45,13 @@ class TestBoard < MiniTest::Test
     @player1.position = 3
     assert_equal( true , @board.check_step(@player1))
   end
+
+  # def test_snake_or_ladder_moves_player
+  #   @player1.position = 26
+  #   new_pos = @board.move_player(@player1)
+  #   assert_equal(10,new_pos)
+  # end
+
+
 
 end
