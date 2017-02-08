@@ -24,11 +24,7 @@ class Board
     player.position = new_position
   end
 
-  # def move_player(player)
-  #   if check_step (player)
-  #     player.position = @snakes_and_ladders[:end]
-  #   end
-  # end
+
 
 
 

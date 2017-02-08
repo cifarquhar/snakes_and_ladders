@@ -12,6 +12,9 @@ class Player
     @position += rand(1..6)
   end
 
+  def has_won
+    return true if @position >=100
+  end
 
 end
 
