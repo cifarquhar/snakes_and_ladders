@@ -15,6 +15,10 @@ class TestSnakeLadder < MiniTest::Test
       {start: 22, end: 50}
       ])
 
+
+    #@random_ladders = SnakeLadder.randomize_ladders
+
+
     @dummy_array = SnakeLadder.new([])
 
     @snake_array = SnakeLadder.new([
@@ -35,6 +39,7 @@ class TestSnakeLadder < MiniTest::Test
   end
 
   def test_no_ladders
+
     array_length = @dummy_array.get_array_size
     assert_equal(true, array_length == 0)
   end
@@ -47,6 +52,18 @@ class TestSnakeLadder < MiniTest::Test
   def test_no_snakes
     array_length = @dummy_array.get_array_size
     assert_equal(true, array_length == 0)
+  end
+
+  def test_dummy_gets_ramndomized_ladders
+    @dummy_array.randomize_ladders
+    array_length = @dummy_array.get_array_size
+    assert_equal(true,array_length != 0)
+  end
+
+  def test_dummy_gets_ramndomized_snakes
+    @dummy_array.randomize_snakes
+    array_length = @dummy_array.get_array_size
+    assert_equal(true,array_length != 0)
   end
 
 

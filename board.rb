@@ -8,8 +8,6 @@ class Board
     @snakes_and_ladders = @ladders.concat(@snakes)
   end
 
-
-
   def find_player(player)
     return player.position
   end
