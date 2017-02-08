@@ -26,7 +26,14 @@ class TestBoard < MiniTest::Test
       {start: 65, end: 14}
       ])
 
+    @empty_ladders = SnakeLadder.new([])
+    @random_ladders = @empty_ladders.randomize_ladders
+
+    @empty_snakes = SnakeLadder.new([])
+    @random_snakes = @empty_snakes.randomize_snakes
+
     @board = Board.new(@ladders,@snakes)
+    #@random_board = Board.new(@random_ladders,@random_snakes)
     @player1 = Player.new("Colin")
     @player2 = Player.new("Josef")
     @player3 = Player.new("RNJesus")
@@ -34,6 +41,7 @@ class TestBoard < MiniTest::Test
 
   def test_has_snakes_or_ladders
     assert_equal(false,@board.snakes_and_ladders.empty?)
+    #assert_equal(false,@random_board.snakes_and_ladders.empty?)
   end
 
   def test_find_player_position

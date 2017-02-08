@@ -15,9 +15,9 @@ class SnakeLadder
     for existing_element in array
       if existing_element[:start] != element[:start]
        return true
-     else
-      return false
-     end
+      else
+       return false
+      end
     end
   end
 

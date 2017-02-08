@@ -6,6 +6,7 @@ class Board
     @ladders = ladders.array
     @snakes = snakes.array
     @snakes_and_ladders = @ladders.concat(@snakes)
+    
   end
 
   def find_player(player)
