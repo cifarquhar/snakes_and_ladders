@@ -13,15 +13,20 @@ class Board
   end
 
 
-  def check_step(player)
+  def stepped_on_mover(player)
+
+    new_position = player.position
+
     for step in @snakes_and_ladders
-      return true  if player.position == step[:start]
+      new_position = step[:end] if player.position == step[:start]
     end
+
+    player.position = new_position
   end
 
   # def move_player(player)
-  #   if check_step 
-  #     player.position = @snakes[:end]
+  #   if check_step (player)
+  #     player.position = @snakes_and_ladders[:end]
   #   end
   # end
 

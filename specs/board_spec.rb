@@ -36,21 +36,24 @@ class TestBoard < MiniTest::Test
   #   assert_equal(position, )
   # end
 
-  def test_check_player_landed_on_snake
-    @player1.position = 26
-    assert_equal( true , @board.check_step(@player1))
-  end
-
-  def test_check_player_landed_on_ladder
-    @player1.position = 3
-    assert_equal( true , @board.check_step(@player1))
-  end
-
-  # def test_snake_or_ladder_moves_player
+  # def test_check_player_landed_on_snake
   #   @player1.position = 26
-  #   new_pos = @board.move_player(@player1)
-  #   assert_equal(10,new_pos)
+  #   assert_equal( true , @board.check_step(@player1))
   # end
+
+  # def test_check_player_landed_on_ladder
+  #   @player1.position = 3
+  #   assert_equal( true , @board.check_step(@player1))
+  # end
+
+  def test_snake_or_ladder_moves_player
+    @player1.position = 26
+    @player2.position = 3
+    new_pos1 = @board.stepped_on_mover(@player1)
+    new_pos2 = @board.stepped_on_mover(@player2)
+    assert_equal(10,new_pos1)
+    assert_equal(7,new_pos2)
+  end
 
 
 
