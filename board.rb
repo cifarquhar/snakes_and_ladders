@@ -1,10 +1,14 @@
 class Board 
 
-  attr_reader  :snakes_and_ladders
+  attr_accessor  :snakes_and_ladders, :ladders, :snakes
 
-  def initialize
-    @snakes_and_ladders = [{start: 26, end: 10},{start: 3, end: 7}]
+  def initialize(ladders,snakes)
+    @ladders = ladders.array
+    @snakes = snakes.array
+    @snakes_and_ladders = @ladders.concat(@snakes)
   end
+
+
 
   def find_player(player)
     return player.position
