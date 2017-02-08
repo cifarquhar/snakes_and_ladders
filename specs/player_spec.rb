@@ -16,15 +16,8 @@ def test_player_has_name
   assert_equal("Colin", @player1.name)
 end
 
-def test_player_can_move
-  @player1.move
-  assert_equal(false,@player1.position == 0)
-end
 
-def test_player_has_won
-  @player1.position = 103
-  assert_equal(true,@player1.has_won)
-end
+
 
 
 

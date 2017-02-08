@@ -1,16 +1,29 @@
 class Board 
 
-  attr_reader :squares, :snakes_and_ladders
+  attr_reader  :snakes_and_ladders
 
   def initialize
-    #@squares = Array (0..100)
+
     @snakes_and_ladders = [{start: 26, end: 10},{start: 3, end: 7}]
-    #@ladders = {start: 3, end: 7}
+   
   end
 
   def find_player(player)
     return player.position
   end
+
+
+  def move
+    # @position += rand(1..6)
+    @position += 10 # For testing
+  end
+
+  def has_won
+    return true if @position >=100
+    return false
+  end
+
+
 
 
   def stepped_on_mover(player)
@@ -23,6 +36,7 @@ class Board
 
     player.position = new_position
   end
+
 
 
 
