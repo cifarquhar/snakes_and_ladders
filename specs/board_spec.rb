@@ -6,16 +6,11 @@ require_relative('../board.rb')
 class TestBoard < MiniTest::Test
 
   def setup()
-
-
-  @board = Board.new
-  @player1 = Player.new("Colin")
-  @player2 = Player.new("Josef")
-  @player3 = Player.new("RNJesus")
-
-
+    @board = Board.new
+    @player1 = Player.new("Colin")
+    @player2 = Player.new("Josef")
+    @player3 = Player.new("RNJesus")
   end
-
 
   def test_has_snakes
     assert_equal(false,@board.snakes_and_ladders.empty?)
@@ -26,10 +21,9 @@ class TestBoard < MiniTest::Test
   end
 
   def test_player_can_move
-    @player1.move
+    @board.move(@player1)
     assert_equal(false,@player1.position == 0)
   end
-
 
   def test_snake_or_ladder_moves_player
     @player1.position = 26
@@ -43,14 +37,16 @@ class TestBoard < MiniTest::Test
     assert_equal(4,new_pos3)
   end
 
+  def test_player_evaded_snakes_ladders
+    @board.move(@player3)
+    assert_equal(10,@player3.position)
+  end
+
   def test_player_has_won
     @player1.position = 103
     @player2.position = 45
-    assert_equal(true,@player1.has_won)
-    assert_equal(false,@player2.has_won)
+    assert_equal(true,@board.has_won(@player1))
+    assert_equal(false,@board.has_won(@player2))
   end
-
-
-
 
 end
